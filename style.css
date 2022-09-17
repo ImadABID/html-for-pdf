@@ -1,0 +1,47 @@
+
+body{
+
+    display: block;
+
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+
+    width: 210mm;
+
+    font-size: 11pt;
+
+    background-color: white;
+
+}
+
+div.page_A4{
+
+    /*Modifiable area*/
+
+    --padding : 15mm;
+
+    /*   ---   */
+
+    display: block;
+    transform: scale(1);
+
+    margin: 0;
+    padding: var(--padding);
+    border-width: 0;
+
+    width : calc(210mm - calc(2 * var(--padding)));
+    height : calc(297mm - calc(2 * var(--padding)));
+
+    overflow: hidden;
+
+}
+
+p{
+    text-indent: 12.7mm;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
