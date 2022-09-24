@@ -3,9 +3,9 @@ body{
 
     display: block;
 
-    margin: 0;
-    padding: 0;
-    border-width: 0;
+    margin: 0mm;
+    padding: 0mm;
+    border-width: 0mm;
 
     width: 210mm;
 
@@ -26,7 +26,7 @@ div.page_A4{
     display: block;
     transform: scale(1);
 
-    margin: 0;
+    margin: 0mm;
     padding: var(--padding);
     border-width: 0;
 
