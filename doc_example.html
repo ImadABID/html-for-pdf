@@ -6,41 +6,65 @@
     <link rel="stylesheet" href="style.css">
     <title>Document example</title>
 </head>
-<body>
+<body id="body">
 
     <div class="page_A4">
-        <h1>Welcome</h1>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt vitae fugiat consequatur dolore dignissimos ut sint? Molestiae deserunt laborum labore? Similique dolorem eos perspiciatis quo! Earum assumenda vel dignissimos.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt vitae fugiat consequatur dolore dignissimos ut sint? Molestiae deserunt laborum labore? Similique dolorem eos perspiciatis quo! Earum assumenda vel dignissimos.
-        </p>
-        <p>
-            <div class="cmath"> A math expression `f(x) = (x+2)/(2x+1)` bla bla `x in RR,\ x !=-1/2` is inserted.</div>
-        </p>
+        <h1 style="text-align: center;">Title</h1>
+
+        <table>
+            <tr>
+                <td>clientHeight</td>
+                <td id="clientHeight"></td>
+            </tr>
+            <tr>
+                <td>scrollHeight</td>
+                <td id="scrollHeight"></td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div id='container' style="height: 100mm; width: 100mm; overflow: hidden; background-color: red;">
+            <div id="inside" style="height: 120mm; margin-left : auto; margin-right : auto; width: 50mm; background-color: green;"></div>
+        </div>
+
+        <script>
+            
+            const container = document.getElementById('container');
+            const inside = document.getElementById('inside');
+
+            const clientHeight = document.getElementById('clientHeight');
+            const scrollHeight = document.getElementById('scrollHeight');
+
+            clientHeight.innerHTML = container.clientHeight;
+            scrollHeight.innerHTML = container.scrollHeight;
+
+        </script>
+
     </div>
 
-    <div class="page_A4">
+    <div class="content_section">
+
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sunt vitae fugiat consequatur dolore dignissimos ut sint? Molestiae deserunt laborum labore? Similique dolorem eos perspiciatis quo! Earum assumenda vel dignissimos.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime nulla consectetur officia iste nihil illum odio, aliquam natus quibusdam dolores ad blanditiis quae nisi ratione, suscipit rem. Praesentium, laudantium.
         </p>
+
     </div>
 
     <!-- Invisible elments -->
     <div style="visibility:hidden; position: absolute; top:0; left: 0; height: 1mm; width: 1mm;">
         <table id="page_A4_layout_table" style="height: 100%; width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-            <tr style="width: 100%; height:6%; margin : 0mm; padding:0mm; border-width: 0mm;">
+            <tr style="width: 100%; height: var(--header_footer_height); margin : 0mm; padding:0mm; border-width: 0mm;">
                 <td id="page_A4_layout_header" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
                     header
                 </td>
             </tr>
-            <tr style="width: 100%; height:88%; margin : 0mm; padding:0mm; border-width: 0mm;">
+            <tr style="width: 100%; height:var(--main_content_height); margin : 0mm; padding:0mm; border-width: 0mm;">
                 <td id="page_A4_layout_main" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
                     main
                 </td>
             </tr>
-            <tr style="width: 100%; height:6%; margin : 0mm; padding:0mm; border-width: 0mm;">
+            <tr style="width: 100%; height: var(--header_footer_height); margin : 0mm; padding:0mm; border-width: 0mm;">
                 <td id="page_A4_layout_footer" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
                     footer
                 </td>
