@@ -170,14 +170,25 @@ const content2A4pages = (header_footer_debug=false)=>{
                 break;
 
             case 'content_section':
-                
+            
+                if(body_child.children.length === 0)
+                    break;
+
+                // console.log('-----')
+                // console.log(body_child.outerHTML);
                 last_page = section2A4pages(body_child, last_page, use_a_new_page);
                 use_a_new_page = false;
 
                 break;
 
             case 'next_page':
+
+                if(body_child.innerHTML === 'Processed')
+                    break;
+
+                console.log('next_page')
                 use_a_new_page = true;
+                body_child.innerHTML = 'Processed'
                 break;
         }
 
@@ -188,6 +199,13 @@ const content2A4pages = (header_footer_debug=false)=>{
 
     while(sections.length>0){
         document.getElementById('body').removeChild(sections[0]);
+    }
+
+    // remove next_page
+    let next_pages = document.getElementsByClassName('next_page');
+
+    while(next_pages.length>0){
+        document.getElementById('body').removeChild(next_pages[0]);
     }
 
 }
@@ -232,3 +250,4 @@ const debug_page_alignment = ()=>{
 // Main
 
 content2A4pages();
+plot_figure();
