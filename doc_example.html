@@ -25,7 +25,7 @@
         <br>
 
         <div id='container' style="height: 100mm; width: 100mm; overflow: hidden; background-color: red;">
-            <div id="inside" style="height: 120mm; margin-left : auto; margin-right : auto; width: 50mm; background-color: green;"></div>
+            <div id="inside" style="height: 20mm; margin-left : auto; margin-right : auto; width: 50mm; background-color: green;"></div>
         </div>
 
         <script>
@@ -46,29 +46,85 @@
     <div class="content_section">
 
         <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime nulla consectetur officia iste nihil illum odio, aliquam natus quibusdam dolores ad blanditiis quae nisi ratione, suscipit rem. Praesentium, laudantium.
+            p1 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime nulla consectetur officia iste nihil illum odio, aliquam natus quibusdam dolores ad blanditiis quae nisi ratione, suscipit rem. Praesentium, laudantium.
+        </p>
+
+        <p>
+            p2 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <div class="figure">
+            <div style="background-color: yellow; height : 100mm; width : 100mm;"></div>
+        </div>
+
+        <p>
+            p3 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p4 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p5 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p6 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p7 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima cumque perferendis cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p8 : Lorem ipsum dolor <br> sit amet consectetur, <br> adipisicing elit. Minima cumque perferendis <br> cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <div class="figure">
+            <div style="background-color: rgb(162, 10, 86); height : 100mm; width : 100mm;"></div>
+        </div>
+
+        <p>
+            p9 : Lorem ipsum dolor <br> sit amet consectetur, <br> adipisicing elit. Minima cumque perferendis <br> cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p10 : Lorem ipsum dolor <br> sit amet consectetur, <br> adipisicing elit. Minima cumque perferendis <br> cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
+        </p>
+
+        <p>
+            p11 : Lorem ipsum dolor <br> sit amet consectetur, <br> adipisicing elit. Minima cumque perferendis <br> cum dolorem rerum, quaerat nulla. Sit, qui. Harum repellendus asperiores molestias iste velit illum corporis accusamus odit? Distinctio, cum?
         </p>
 
     </div>
 
+    <div class="content_section">
+        <p>New Section</p>
+    </div>
+
     <!-- Invisible elments -->
-    <div style="visibility:hidden; position: absolute; top:0; left: 0; height: 1mm; width: 1mm;">
+    <div id="page_A4_layout" class="page_A4_layout">
         <table id="page_A4_layout_table" style="height: 100%; width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-            <tr style="width: 100%; height: var(--header_footer_height); margin : 0mm; padding:0mm; border-width: 0mm;">
-                <td id="page_A4_layout_header" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    header
-                </td>
-            </tr>
-            <tr style="width: 100%; height:var(--main_content_height); margin : 0mm; padding:0mm; border-width: 0mm;">
-                <td id="page_A4_layout_main" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    main
-                </td>
-            </tr>
-            <tr style="width: 100%; height: var(--header_footer_height); margin : 0mm; padding:0mm; border-width: 0mm;">
-                <td id="page_A4_layout_footer" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    footer
-                </td>
-            </tr>
+            <tbody style="height: 100%; width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
+
+                <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
+                    <td id="page_A4_layout_header" style="height: var(--header_footer_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+        
+                    </td>
+                </tr>
+                <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
+                    <td id="page_A4_layout_main" style="height:var(--main_content_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+            
+                    </td>
+                </tr>
+                <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
+                    <td id="page_A4_layout_footer" style="height: var(--header_footer_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+            
+                    </td>
+                </tr>
+
+            </tbody>
         </table>
     </div>
 
