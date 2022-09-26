@@ -46,8 +46,8 @@ div.page_A4_layout{
     visibility:hidden;
     
     position: absolute;
-    top:0;
-    left: 0;
+    top:0mm;
+    left: 0mm;
 
     display: block;
     transform: scale(1);
@@ -69,10 +69,29 @@ div.content_section{
 
     margin: 0mm;
     padding: var(--padding);
-    border-width: 0;
+    border-width: 0mm;
 
     width : calc(210mm - calc(2 * var(--padding)));
     height : calc(297mm - calc(2 * var(--padding)));
+
+}
+
+div.next_page{
+
+    visibility:hidden;
+    
+    position: absolute;
+    top:0;
+    left: 0;
+
+    margin: 0mm;
+    padding: 0mm;
+    border-width: 0mm;
+
+    width : 1mm;
+    height : 1mm;
+
+    overflow: hidden;
 
 }
 

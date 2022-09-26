@@ -66,7 +66,7 @@ let page_A4_layout = document.getElementById('page_A4_layout');
 let main_content_height = get_page_element(page_A4_layout, 1).clientHeight;
 
 // content_sections to A4 pages
-const content2A4pages = ()=>{
+const content2A4pages = (header_footer_debug=false)=>{
 
     const append_ele_to_page = (page, element) => {
 
@@ -89,7 +89,7 @@ const content2A4pages = ()=>{
         const new_A4_page = (precedent_page)=>{
             precedent_page.insertAdjacentHTML('afterend', '<div class="page_A4"></div>');
             let new_page = precedent_page.nextSibling;
-            make_A4_page_conform(new_page, true);
+            make_A4_page_conform(new_page, header_footer_debug);
             
             if(main_content_height == null){
                 main_content_height = get_page_element(new_page, 1).clientHeight;
@@ -158,20 +158,36 @@ const content2A4pages = ()=>{
 
     let last_page = null;
 
+    let use_a_new_page = false;
+
     for(let body_child of body_children){
 
         switch(body_child.className){
             
             case 'page_A4':
-                make_A4_page_conform(body_child, true);
+                make_A4_page_conform(body_child, header_footer_debug);
                 last_page = body_child;
                 break;
 
             case 'content_section':
-                last_page = section2A4pages(body_child, last_page);
+                
+                last_page = section2A4pages(body_child, last_page, use_a_new_page);
+                use_a_new_page = false;
+
+                break;
+
+            case 'next_page':
+                use_a_new_page = true;
                 break;
         }
 
+    }
+
+    // remove section
+    let sections = document.getElementsByClassName('content_section');
+
+    while(sections.length>0){
+        document.getElementById('body').removeChild(sections[0]);
     }
 
 }
