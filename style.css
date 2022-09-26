@@ -103,3 +103,17 @@ a{
     color: inherit;
     text-decoration: inherit;
 }
+
+div.figure{
+    text-align: center;
+}
+
+div.fig_title_div{
+
+}
+span.fig_title{
+    text-align: center;
+}
+span.fig_nbr{
+    font-weight: bolder;
+}

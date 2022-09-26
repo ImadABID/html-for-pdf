@@ -229,6 +229,27 @@ const add_header_and_footer = (header, footer)=>{
 
 }
 
+// Figures
+const plot_figure = ()=>{
+				
+    let fig;
+    let fig_title_div;
+    let fig_title_str;
+    let figures_div = document.getElementsByClassName('figure');
+    for(let i = 0; i < figures_div.length; i++){
+        
+        fig = figures_div[i];
+        fig_title_str = `<br><span class="fig_title"><span class="fig_nbr">fig${i+1} - </span>${fig.title}</span>`;
+
+        fig_title_div = document.createElement('div');
+        fig_title_div.classList.add('fig_title_div');
+        fig_title_div.innerHTML = fig_title_str
+        
+        fig.appendChild(fig_title_div);
+    }
+
+}
+
 /* Debug */
 const debug_page_alignment = ()=>{
     let i = 0;
