@@ -248,6 +248,43 @@ const plot_figure = ()=>{
 
 }
 
+// biblio
+var biblio_str;
+
+const biblio_num = ()=>{
+    biblio_str = "<table>";
+    const ref_num_tab = document.getElementsByClassName('bibliography');
+    let index = 1;
+    let in_list_ele;
+    for(let i = 0; i < ref_num_tab.length; i++){
+        in_list_ele = document.getElementById(`in_list_${ref_num_tab[i].id}`);
+        if(in_list_ele === null){
+            biblio_add_to_list(ref_num_tab[i].id, index);
+            ref_num_tab[i].innerHTML = `[${index}]`;
+            index++;
+        }else{
+            ref_num_tab[i].innerHTML = document.getElementById(`in_list_${ref_num_tab[i].id}`).innerHTML;
+        }
+    }
+}
+const biblio_update = ()=>{
+    let biblio = document.getElementById('biblio_list');
+    biblio.innerHTML = biblio_str+"</table>";
+}
+const biblio_add_to_list= (id, index)=>{
+    for(let i = 0; i < bibliography.length; i++){
+        if(id === bibliography[i].id){
+            biblio_str+=`<tr><td id='in_list_${bibliography[i].id}''>[${index}]</td><td>${bibliography[i].biblio}</td></tr>`;
+            biblio_update();
+            break;
+        }
+    }
+}
+const biblio_print = ()=>{
+    biblio_num();
+    biblio_update();
+}
+
 /* Debug */
 const debug_page_alignment = ()=>{
     let i = 0;
@@ -268,5 +305,6 @@ const debug_page_alignment = ()=>{
 
 // Main
 
-content2A4pages(true);
+content2A4pages();
 plot_figure();
+biblio_print();

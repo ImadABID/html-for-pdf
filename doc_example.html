@@ -65,13 +65,14 @@
     </div>
 
     <div class="content_section">
-        <p>New Section</p>
+        <p>New Section : see <span class='bibliography' id='reverse_engineering_lora'></span></p>
     </div>
 
     <div class="next_page"></div>
 
     <div class="content_section">
         <p>New Section in new page</p>
+        <div id="biblio_list"></div>
     </div>
 
     <!-- Invisible elments -->
@@ -104,6 +105,18 @@
     </div>
 
     <!-- MyScript -->
+    <script>
+        // ref
+        const bibliography = [
+            {id:'reverse_engineering_lora', biblio:'A. Marquet, N. Montavont, and G. Z. Papadopoulos, “Towards an SDR implementation of LoRa: Reverse-engineering, demodulation strategies and assessment over Rayleigh channel,” Computer Communications, vol. 153, pp. 595–605, Mar. 2020, doi: 10.1016/j.comcom.2020.02.034.'},
+            {id:'lorawan_spec', biblio:'LoRaWAN® 1.0.4 Specification Package,” LoRa Alliance®. https://lora-alliance.org/resource_hub/lorawan-104-specification-package/ (accessed Jun. 24, 2022).'},
+            {id:'whitening', biblio:'G. Maral, M. Bousquet, and Z. Sun, Satellite Communications Systems: Systems, Techniques and Technology. John Wiley & Sons, 2020.'},
+            {id:'ber', biblio:'H. Mroue, A. Nasser, B. Parrein, S. Hamrioui, E. Mona-Cruz, and G. Rouyer, “Analytical and Simulation study for LoRa Modulation,” in 2018 25th International Conference on Telecommunications (ICT), Jun. 2018, pp. 655–659. doi: 10.1109/ICT.2018.8464879.'},
+            {id:'gray', biblio : '[1]“Virtual Labs.” http://vlabs.iitb.ac.in/vlabs-dev/labs/dldesignlab/experiments/binary-to-gray-code-converter-pvg/theory.html (accessed Jun. 24, 2022).'},
+            {id:'wave_forme', biblio:'[1]L. Vangelista, “Frequency Shift Chirp Modulation: The LoRa Modulation,” IEEE Signal Processing Letters, vol. 24, no. 12, pp. 1818–1821, Dec. 2017, doi: 10.1109/LSP.2017.2762960.'},
+            {id:'campus', biblio:'[1]D.-H. Kim, E.-K. Lee, and J. Kim, “Experiencing LoRa Network Establishment on a Smart Energy Campus Testbed,” Sustainability, vol. 11, p. 1917, Mar. 2019, doi: 10.3390/su11071917.'}
+        ];
+    </script>
     <script src="script.js"></script>
     <script>
         // debug_page_alignment();
