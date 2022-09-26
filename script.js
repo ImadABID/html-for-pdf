@@ -1,4 +1,5 @@
 const page_layout_tab = document.getElementById('page_A4_layout_table');
+const invisible_footer = document.getElementById('invisible_footer');
 
 // Make page conform (Add headers and footer)
 const make_A4_page_conform = (page, debug=false) => {
@@ -73,12 +74,16 @@ const content2A4pages = (header_footer_debug=false)=>{
         let page_content = get_page_element(page, 1);
 
         page_content.appendChild(element)
+        element.insertAdjacentHTML('afterend', invisible_footer.outerHTML);
 
 
-        if(page_content.scrollHeight > 876){
+        if(page_content.scrollHeight > main_content_height){
+            page_content.removeChild(page_content.lastChild);
             page_content.removeChild(page_content.lastChild);
             return false
         }
+
+        page_content.removeChild(page_content.lastChild);
 
         return true;
 
@@ -90,10 +95,6 @@ const content2A4pages = (header_footer_debug=false)=>{
             precedent_page.insertAdjacentHTML('afterend', '<div class="page_A4"></div>');
             let new_page = precedent_page.nextSibling;
             make_A4_page_conform(new_page, header_footer_debug);
-            
-            if(main_content_height == null){
-                main_content_height = get_page_element(new_page, 1).clientHeight;
-            }
 
             return new_page;
         }
@@ -174,8 +175,6 @@ const content2A4pages = (header_footer_debug=false)=>{
                 if(body_child.children.length === 0)
                     break;
 
-                // console.log('-----')
-                // console.log(body_child.outerHTML);
                 last_page = section2A4pages(body_child, last_page, use_a_new_page);
                 use_a_new_page = false;
 
@@ -186,7 +185,6 @@ const content2A4pages = (header_footer_debug=false)=>{
                 if(body_child.innerHTML === 'Processed')
                     break;
 
-                console.log('next_page')
                 use_a_new_page = true;
                 body_child.innerHTML = 'Processed'
                 break;
@@ -270,5 +268,5 @@ const debug_page_alignment = ()=>{
 
 // Main
 
-content2A4pages();
+content2A4pages(true);
 plot_figure();
