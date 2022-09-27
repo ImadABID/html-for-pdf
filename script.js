@@ -133,16 +133,23 @@ const content2A4pages = (header_footer_debug=false)=>{
 
                 if(!append_ele_to_page(page, ele)){
 
-                    if(dec === 0){
-                        page = new_A4_page(page);
-                        page_for_figure = page;
-                    }else{
+                    let inserted = false;
+                    while(!inserted && dec > 0){
+
                         page = page.nextSibling;
                         dec --;
+
+                        inserted = append_ele_to_page(page, ele);
+                    
                     }
 
-                    if(!append_ele_to_page(page, ele)){
-                        console.log('error cannot display a contenet in one page.')
+                    if(!inserted){
+                        page = new_A4_page(page);
+                        page_for_figure = page;
+
+                        if(!append_ele_to_page(page, ele)){
+                            console.log('error cannot display a contenet in one page.')
+                        }
                     }
 
                 }
