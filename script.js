@@ -241,10 +241,22 @@ const plot_figure = ()=>{
     let fig_title_div;
     let fig_title_str;
     let figures_div = document.getElementsByClassName('figure');
+
+    let figures_labels = document.getElementsByClassName('figure_label');
+
     for(let i = 0; i < figures_div.length; i++){
         
+        // Edit figure title
         fig = figures_div[i];
         fig_title_str = `<br><span class="fig_title"><span class="fig_nbr">fig${i+1} - </span>${fig.title}</span>`;
+
+        // edit label
+        for(let j = 0; j < figures_labels.length; j++){
+
+            if(figures_div[i].id === figures_labels[j].id){
+                figures_labels[j].innerHTML = `[${i+1}]`;
+            }
+        }
 
         fig_title_div = document.createElement('div');
         fig_title_div.classList.add('fig_title_div');
