@@ -254,7 +254,7 @@ const plot_figure = ()=>{
         for(let j = 0; j < figures_labels.length; j++){
 
             if(figures_div[i].id === figures_labels[j].id){
-                figures_labels[j].innerHTML = `[${i+1}]`;
+                figures_labels[j].innerHTML = `(fig${i+1})`;
             }
         }
 
