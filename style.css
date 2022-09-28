@@ -4,7 +4,7 @@ body{
     /*Modifiable area*/
 
     /* Padding of A4 page */
-    --padding : 16mm;
+    --padding : 24mm;
 
     --header_footer_height : 16mm;
     --main_content_height : calc(calc(297mm - calc(2 * var(--padding))) - calc(2 * var(--header_footer_height)))
@@ -20,6 +20,8 @@ body{
     width: 210mm;
 
     font-size: 11pt;
+
+    font-family: Georgia, 'Times New Roman', Times, serif; /*FreeSerif*/
 
     background-color: white;
 
