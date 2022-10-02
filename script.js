@@ -248,13 +248,13 @@ const plot_figure = ()=>{
         
         // Edit figure title
         fig = figures_div[i];
-        fig_title_str = `<br><span class="fig_title"><span class="fig_nbr">fig${i+1} - </span>${fig.title}</span>`;
+        fig_title_str = `<br><span class="fig_title"><span class="fig_nbr">fig ${i+1} - </span>${fig.title}</span>`;
 
         // edit label
         for(let j = 0; j < figures_labels.length; j++){
 
             if(figures_div[i].id === figures_labels[j].id){
-                figures_labels[j].innerHTML = `(fig${i+1})`;
+                figures_labels[j].innerHTML = `(fig ${i+1})`;
             }
         }
 
