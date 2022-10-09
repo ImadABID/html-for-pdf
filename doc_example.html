@@ -153,10 +153,10 @@
 
         debug_page_alignment();
 
-        header = (page_nbr) => {return `<div style='text-align : center;'>Header</div><hr>`;}
-        footer = (page_nbr) => {
+        header = (page_nbr, totale_page_number) => {return `<div style='text-align : center;'>Header</div><hr>`;}
+        footer = (page_nbr, totale_page_number) => {
             if(page_nbr > 0){
-                return `<hr><div style='text-align : right;'> page : ${page_nbr}</div>`;
+                return `<hr><div style='text-align : right;'> page : ${page_nbr+1} of ${totale_page_number}</div>`;
             }else{
                 return '<hr>';
             }

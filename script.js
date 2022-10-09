@@ -259,8 +259,8 @@ const add_header_and_footer = (header, footer)=>{
 
     let page_i = 0;
     for(let page of pages){
-        get_page_element(page, 0).innerHTML = header(page_i);
-        get_page_element(page, 2).innerHTML = footer(page_i);
+        get_page_element(page, 0).innerHTML = header(page_i, pages.length);
+        get_page_element(page, 2).innerHTML = footer(page_i, pages.length);
         page_i++;
     }
 
