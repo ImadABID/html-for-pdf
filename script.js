@@ -1,6 +1,8 @@
 const page_layout_tab = document.getElementById('page_A4_layout_table');
 const invisible_footer = document.getElementById('invisible_footer');
 
+let main_content_height = null;
+
 // Make page conform (Add headers and footer)
 const make_A4_page_conform = (page, debug=false) => {
 
@@ -8,9 +10,35 @@ const make_A4_page_conform = (page, debug=false) => {
         return page_.children[0] && page_.children[0].id === "page_A4_layout_table";
     }
 
+    /*
+    Returns page height in mm without unit
+    */
+    const setup_A4_page_layout = (page)=>{
+
+        let layout = getComputedStyle(document.documentElement).getPropertyValue('--layout');
+        let padding = getComputedStyle(document.documentElement).getPropertyValue('--padding');
+
+        padding_in_mm_int = parseInt(padding.slice(0, -2));
+
+        if(layout === ' landscape'){
+            page.style['width'] = `${297-2*padding_in_mm_int}mm`;
+            page.style['height'] = `${210-2*padding_in_mm_int}mm`;
+            return 210-2*padding_in_mm_int
+        }else{
+            page.style['width'] = `${210-2*padding_in_mm_int}mm`;
+            page.style['height'] = `${297-2*padding_in_mm_int}mm`;
+            return 297-2*padding_in_mm_int
+        }
+
+    }
+
     if(is_A4_page_conform(page)){
         return;
     }
+
+    let page_height = setup_A4_page_layout(page);
+
+    let header_footer_height = getComputedStyle(document.documentElement).getPropertyValue('--header_footer_height');
 
     let tr_i = 0;
 
@@ -21,6 +49,7 @@ const make_A4_page_conform = (page, debug=false) => {
             case 0:
                 for(const td of tr.children){
                     td.innerHTML = "";
+                    td.style['height'] = header_footer_height;
                     if(debug){
                         td.style['background-color'] = 'rgb(255, 200, 208)';
                     }
@@ -30,6 +59,7 @@ const make_A4_page_conform = (page, debug=false) => {
             case 1:
                 for(const td of tr.children){
                     td.innerHTML = page.innerHTML;
+                    td.style['height'] = `${page_height-2*parseInt(header_footer_height.slice(0,-2))}mm`;
                     if(debug){
                         td.style['background-color'] = 'rgb(208, 200, 255)';
                     }
@@ -39,6 +69,7 @@ const make_A4_page_conform = (page, debug=false) => {
             case 2:
                 for(const td of tr.children){
                     td.innerHTML = "";
+                    td.style['height'] = header_footer_height;
                     if(debug){
                         td.style['background-color'] = 'rgb(200, 208, 255)';
                     }
@@ -57,14 +88,15 @@ const make_A4_page_conform = (page, debug=false) => {
 
     page.innerHTML = page_layout_tab.outerHTML;
 
+    if(main_content_height === null){
+        main_content_height = get_page_element(page, 1).clientHeight;
+    }
+
 }
 
 const get_page_element = (page, element_index)=>{
     return page.children[0].children[0].children[element_index].children[0];
 }
-
-let page_A4_layout = document.getElementById('page_A4_layout');
-let main_content_height = get_page_element(page_A4_layout, 1).clientHeight;
 
 // content_sections to A4 pages
 const content2A4pages = (header_footer_debug=false)=>{

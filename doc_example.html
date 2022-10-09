@@ -11,10 +11,9 @@
             --padding : 24mm;
 
             --header_footer_height : 16mm;
-            --main_content_height : calc(calc(297mm - calc(2 * var(--padding))) - calc(2 * var(--header_footer_height)));
 
-            /* Layout = 'portrait' or 'landscape' */
-            --layout : 'portrait';
+            /* layout = 'portrait' or 'landscape' */
+            --layout : landscape;
             
         }
     </style>
@@ -113,17 +112,17 @@
             <tbody style="height: 100%; width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
 
                 <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    <td id="page_A4_layout_header" style="height: var(--header_footer_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+                    <td id="page_A4_layout_header" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
         
                     </td>
                 </tr>
                 <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    <td id="page_A4_layout_main" style="height:var(--main_content_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+                    <td id="page_A4_layout_main" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
             
                     </td>
                 </tr>
                 <tr style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm;">
-                    <td id="page_A4_layout_footer" style="height: var(--header_footer_height); width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
+                    <td id="page_A4_layout_footer" style="width: 100%; margin : 0mm; padding:0mm; border-width: 0mm; overflow: hidden;">
             
                     </td>
                 </tr>
@@ -151,9 +150,6 @@
     </script>
     <script src="script.js"></script>
     <script>
-
-        let lay = getComputedStyle(document.documentElement).getPropertyValue('--layout');
-        console.log(lay);
 
         debug_page_alignment();
 

@@ -24,9 +24,6 @@ div.page_A4{
     padding: var(--padding);
     border-width: 0;
 
-    width : calc(210mm - calc(2 * var(--padding)));
-    height : calc(297mm - calc(2 * var(--padding)));
-
     overflow: hidden;
 
 }
