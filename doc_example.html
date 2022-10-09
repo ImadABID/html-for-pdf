@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>
+        :root{
+
+            /* Padding of A4 page */
+            --padding : 24mm;
+
+            --header_footer_height : 16mm;
+            --main_content_height : calc(calc(297mm - calc(2 * var(--padding))) - calc(2 * var(--header_footer_height)));
+
+            /* Layout = 'portrait' or 'landscape' */
+            --layout : 'portrait';
+            
+        }
+    </style>
     <title>Document example</title>
 </head>
 <body id="body">
@@ -137,7 +151,11 @@
     </script>
     <script src="script.js"></script>
     <script>
-        // debug_page_alignment();
+
+        let lay = getComputedStyle(document.documentElement).getPropertyValue('--layout');
+        console.log(lay);
+
+        debug_page_alignment();
 
         header = (page_nbr) => {return `<div style='text-align : center;'>Header</div><hr>`;}
         footer = (page_nbr) => {

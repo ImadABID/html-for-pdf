@@ -1,23 +1,11 @@
 
 body{
 
-    /*Modifiable area*/
-
-    /* Padding of A4 page */
-    --padding : 24mm;
-
-    --header_footer_height : 16mm;
-    --main_content_height : calc(calc(297mm - calc(2 * var(--padding))) - calc(2 * var(--header_footer_height)))
-
-    /*   ---   */
-
     display: block;
 
     margin: 0mm;
     padding: 0mm;
     border-width: 0mm;
-
-    width: 210mm;
 
     font-size: 11pt;
 
@@ -51,30 +39,9 @@ div.page_A4_layout{
     top:0mm;
     left: 0mm;
 
-    display: block;
-    transform: scale(1);
-
-    margin: 0mm;
-    padding: var(--padding);
-    border-width: 0;
-
-    width : calc(210mm - calc(2 * var(--padding)));
-    height : calc(297mm - calc(2 * var(--padding)));
-
-    overflow: hidden;
 }
 
 div.content_section{
-
-    display: block;
-    transform: scale(1);
-
-    margin: 0mm;
-    padding: var(--padding);
-    border-width: 0mm;
-
-    width : calc(210mm - calc(2 * var(--padding)));
-    height : calc(297mm - calc(2 * var(--padding)));
 
 }
 
