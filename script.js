@@ -157,7 +157,8 @@ const content2A4pages = (header_footer_debug=false)=>{
                     dec++;
 
                     if(!append_ele_to_page(page_for_figure, ele)){
-                        console.log('error cannot display a figure in one page.')
+                        console.log('Error cannot display the following figure in one page :')
+                        console.log(ele.outerHTML)
                     }
                 }
 
@@ -180,7 +181,8 @@ const content2A4pages = (header_footer_debug=false)=>{
                         page_for_figure = page;
 
                         if(!append_ele_to_page(page, ele)){
-                            console.log('error cannot display a contenet in one page.')
+                            console.log('Error cannot display the following contenet in one page :')
+                            console.log(ele.outerHTML)
                         }
                     }
 
