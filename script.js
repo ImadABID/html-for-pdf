@@ -322,6 +322,8 @@ const biblio_num = ()=>{
 }
 const biblio_update = ()=>{
     let biblio = document.getElementById('biblio_list');
+    if(biblio === null)
+        return;
     biblio.innerHTML = biblio_str+"</table>";
 }
 const biblio_add_to_list= (id, index)=>{
